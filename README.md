@@ -107,9 +107,14 @@ Every folder contains:
 
 | Day | Project | Status |
 |-----|---------|--------|
-| 1 | Python Basics | ⏳ |
-| 2 | Data Types | ⏳ |
-| 3 | Treasure Island | ⏳ |
+| 1 | Python Basics | ✅ |
+| 2 | Data Types | ✅ |
+| 3 | Treasure Island | ✅ |
+| 4 | Rock Paper Scissors | ✅ |
+| 5 | Password Generator | ✅ |
+| 6 | Functions | ✅ |
+| 7 | Hangman Game | ✅ |
+| 8 | Caesar Cipher | ⏳ |
 | ... | ... | ... |
 
 ---
