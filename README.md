@@ -114,7 +114,11 @@ Every folder contains:
 | 5 | Password Generator | ✅ |
 | 6 | Functions | ✅ |
 | 7 | Hangman Game | ✅ |
-| 8 | Caesar Cipher | ⏳ |
+| 8 | Caesar Cipher | ✅ |
+| 9 | Secret Auction Program | ✅ |
+| 10 | Calculator | ✅ |
+| 11 | Blackjack Project | ✅ |
+| 12 | Number Guessing Game | ⏳ |
 | ... | ... | ... |
 
 ---
