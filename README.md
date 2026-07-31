@@ -119,7 +119,8 @@ Every folder contains:
 | 10 | Calculator | ✅ |
 | 11 | Blackjack Project | ✅ |
 | 12 | Number Guessing Game | ✅ |
-| 13 | Debugging: Find and Fix Error | ⏳ |
+| 13 | Debugging: Find and Fix Error | ✅ |
+| 14 | Higher or Lower Game | ⏳ |
 | ... | ... | ... |
 
 ---
