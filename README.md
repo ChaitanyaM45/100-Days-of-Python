@@ -120,7 +120,8 @@ Every folder contains:
 | 11 | Blackjack Project | ✅ |
 | 12 | Number Guessing Game | ✅ |
 | 13 | Debugging: Find and Fix Error | ✅ |
-| 14 | Higher or Lower Game | ⏳ |
+| 14 | Higher or Lower Game | ✅ |
+| 15 | Coffee Machine Project | ⏳ |
 | ... | ... | ... |
 
 ---
