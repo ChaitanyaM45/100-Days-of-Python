@@ -118,7 +118,8 @@ Every folder contains:
 | 9 | Secret Auction Program | ✅ |
 | 10 | Calculator | ✅ |
 | 11 | Blackjack Project | ✅ |
-| 12 | Number Guessing Game | ⏳ |
+| 12 | Number Guessing Game | ✅ |
+| 13 | Debugging: Find and Fix Error | ⏳ |
 | ... | ... | ... |
 
 ---
