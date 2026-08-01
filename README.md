@@ -121,7 +121,8 @@ Every folder contains:
 | 12 | Number Guessing Game | ✅ |
 | 13 | Debugging: Find and Fix Error | ✅ |
 | 14 | Higher or Lower Game | ✅ |
-| 15 | Coffee Machine Project | ⏳ |
+| 15 | Coffee Machine Project | ✅ |
+| 16 | Object Oriented Programming (OOPs) | ⏳ |
 | ... | ... | ... |
 
 ---
