@@ -1,170 +1,165 @@
-# 🏛️ Day 016 - Object-Oriented Programming (OOP)
+# ☕ Day 016 - Coffee Machine (Object-Oriented Programming)
 
-## 📌 Overview
+## 📌 Project Overview
 
-Day 016 of the **100 Days of Code: The Complete Python Pro Bootcamp** by Dr. Angela Yu focused on learning the fundamentals of **Object-Oriented Programming (OOP)** in Python.
+This is the **Day 016** project from the **100 Days of Code: The Complete Python Pro Bootcamp** by Dr. Angela Yu.
 
-Instead of building a standalone project, this day introduced the core concepts of OOP, including **classes, objects, attributes, methods, and Python packages**. These concepts are essential for writing organized, reusable, and scalable code.
+The **Coffee Machine (OOP Version)** is a command-line coffee vending machine built using **Object-Oriented Programming (OOP)** principles. Unlike the procedural version from Day 15, this implementation separates responsibilities into multiple classes, making the code cleaner, modular, reusable, and easier to maintain.
 
----
-
-## 📖 Topics Covered
-
-- Why Object-Oriented Programming (OOP) is needed
-- Understanding Classes and Objects
-- Creating Objects
-- Object Attributes
-- Object Methods
-- Accessing Attributes and Methods
-- Modifying Object Attributes
-- Calling Methods
-- Installing Python Packages using PyPI
-- Importing and using external libraries
+The application allows users to order different types of coffee, checks resource availability, processes payments, prepares the selected drink, and generates reports.
 
 ---
 
-## 🧠 What is OOP?
+## 🚀 How It Works
 
-Object-Oriented Programming (OOP) is a programming paradigm that organizes code using **objects**.
-
-An object is an instance of a class and contains:
-
-- **Attributes** → Data or properties
-- **Methods** → Functions that define the object's behavior
-
-For example:
-
-```python
-class Dog:
-    def __init__(self, name):
-        self.name = name
-
-    def bark(self):
-        print("Woof!")
-```
-
-Creating an object:
-
-```python
-my_dog = Dog("Buddy")
-my_dog.bark()
-```
+1. The program displays the available coffee options.
+2. The user selects one of the following drinks:
+   - Espresso
+   - Latte
+   - Cappuccino
+3. The machine checks whether enough ingredients are available.
+4. If resources are sufficient, the user inserts coins.
+5. The payment is verified.
+6. If the payment is successful:
+   - Resources are deducted.
+   - The selected coffee is prepared.
+7. Additional commands:
+   - `report` → Displays available resources and current profit.
+   - `off` → Turns off the coffee machine.
 
 ---
 
-## 📚 Classes vs Objects
+## ☕ Coffee Menu
 
-### Class
+| Drink | Water | Milk | Coffee | Cost |
+|-------|-------:|------:|--------:|-----:|
+| Espresso | 50 ml | 0 ml | 18 g | $1.50 |
+| Latte | 200 ml | 150 ml | 24 g | $2.50 |
+| Cappuccino | 250 ml | 100 ml | 24 g | $3.00 |
 
-A **class** is a blueprint used to create objects.
+---
 
-```python
-class Car:
-    pass
+## 🕹️ Example
+
+```text
+What would you like? (latte/espresso/cappuccino): latte
+
+Please insert coins.
+
+How many quarters?: 10
+How many dimes?: 0
+How many nickels?: 0
+How many pennies?: 0
+
+Here is $0.00 in change.
+Here is your latte ☕ Enjoy!
 ```
 
-### Object
+Generating a report:
 
-An **object** is an instance of a class.
-
-```python
-my_car = Car()
+```text
+Water: 100ml
+Milk: 50ml
+Coffee: 76g
+Money: $2.50
 ```
 
 ---
 
-## 🏷️ Attributes
+## 🏛️ Object-Oriented Design
 
-Attributes store information about an object.
+The project is divided into multiple classes, each with a single responsibility.
+
+### ☕ Menu
+
+Responsible for:
+
+- Displaying available drinks
+- Finding drinks from the menu
 
 Example:
 
 ```python
-class Student:
-    def __init__(self, name):
-        self.name = name
-```
-
-Accessing an attribute:
-
-```python
-print(student.name)
-```
-
-Modifying an attribute:
-
-```python
-student.name = "Chaitanya"
+menu = Menu()
+options = menu.get_items()
+drink = menu.find_drink(choice)
 ```
 
 ---
 
-## ⚙️ Methods
+### 🥛 CoffeeMaker
 
-Methods define what an object can do.
+Responsible for:
 
-```python
-class Student:
-    def greet(self):
-        print("Hello!")
-```
-
-Calling a method:
-
-```python
-student.greet()
-```
-
----
-
-## 📦 Python Packages (PyPI)
-
-I also learned how to install external Python packages using **PyPI (Python Package Index)**.
+- Managing machine resources
+- Checking ingredient availability
+- Preparing coffee
+- Displaying resource reports
 
 Example:
 
-```bash
-pip install prettytable
-```
-
-Importing the package:
-
 ```python
-from prettytable import PrettyTable
+coffee_maker.is_resource_sufficient(drink)
+coffee_maker.make_coffee(drink)
 ```
-
-Using external packages allows developers to build applications more efficiently without writing everything from scratch.
 
 ---
 
-## 💻 Practice
+### 💰 MoneyMachine
 
-The exercises for this day focused on:
+Responsible for:
 
-- Creating classes
-- Creating objects
-- Accessing attributes
-- Calling methods
-- Modifying object attributes
-- Installing and importing Python packages
+- Accepting coins
+- Processing payments
+- Tracking profit
+- Printing money reports
 
-I did **not complete the Coffee Machine OOP project** on this day, as it is covered later in the course.
+Example:
+
+```python
+money_machine.make_payment(drink.cost)
+money_machine.report()
+```
+
+---
+
+### 🍵 MenuItem
+
+Represents a single coffee item and stores information such as:
+
+- Name
+- Water required
+- Milk required
+- Coffee required
+- Cost
+
+---
+
+## 💻 Code Concepts Used
+
+- Object-Oriented Programming (OOP)
+- Classes and Objects
+- Attributes
+- Methods
+- Object Composition
+- Importing Custom Modules
+- Functions
+- Conditional Statements
+- `while` loops
+- User Input
+- Program Flow Control
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-Day-016-Object-Oriented-Programming/
+Day-016-Coffee-Machine-OOP/
+│── main.py
+│── menu.py
+│── coffee_maker.py
+│── money_machine.py
 └── README.md
-```
-
-Optional:
-
-```text
-Day-016-Object-Oriented-Programming/
-│── README.md
-└── practice.py
 ```
 
 ---
@@ -173,23 +168,34 @@ Day-016-Object-Oriented-Programming/
 
 - Python 3
 - Object-Oriented Programming (OOP)
-- PyPI
-- pip
 
 ---
 
 ## 🎯 Learning Outcome
 
-By completing Day 016, I learned how to:
+By completing this project, I learned how to:
 
-- Understand why Object-Oriented Programming is useful
-- Create classes and objects
-- Work with attributes and methods
-- Access and modify object attributes
-- Call object methods
-- Organize code using OOP principles
-- Install external Python packages using PyPI
-- Import and use third-party libraries
+- Apply Object-Oriented Programming principles
+- Create and use classes and objects
+- Organize code into multiple modules
+- Import custom Python modules
+- Use object methods and attributes
+- Separate program responsibilities into different classes
+- Build modular and maintainable applications
+- Simulate a real-world coffee vending machine using OOP
+
+---
+
+## 🔮 Future Improvements
+
+Some enhancements that can be added include:
+
+- Add more coffee varieties
+- Allow users to refill ingredients
+- Store transaction history in a file
+- Add a graphical user interface (GUI)
+- Save resources and profit between sessions
+- Improve input validation and error handling
 
 ---
 
