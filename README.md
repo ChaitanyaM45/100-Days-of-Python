@@ -123,7 +123,7 @@ Every folder contains:
 | 14 | Higher or Lower Game | ✅ |
 | 15 | Coffee Machine Project | ✅ |
 | 16 | Object Oriented Programming (OOPs) | ✅ |
-| 17 | The Quiz Project | ⏳ |
+| 17 | The Quiz Project | ✅ |
 | 18 | Turtle & the Graphical User Interface (GUI) | ⏳ |
 | ... | ... | ... |
 
