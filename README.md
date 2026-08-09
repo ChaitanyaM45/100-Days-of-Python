@@ -124,7 +124,8 @@ Every folder contains:
 | 15 | Coffee Machine Project | ✅ |
 | 16 | Object Oriented Programming (OOPs) | ✅ |
 | 17 | The Quiz Project | ✅ |
-| 18 | Turtle & the Graphical User Interface (GUI) | ⏳ |
+| 18 | Turtle & the Graphical User Interface (Hirst Spot Painting) | ✅ |
+| 19 | Turtle Racing Game | ⏳ |
 | ... | ... | ... |
 
 ---
