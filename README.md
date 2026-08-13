@@ -134,6 +134,7 @@ Every folder contains:
 
 This repository showcases my progress while learning Python through practical projects. Every project helps strengthen my understanding of software development, automation, data science, and web development.
 
+
 ---
 
 ⭐ If you like this repository, feel free to star it!
