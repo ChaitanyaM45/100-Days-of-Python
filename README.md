@@ -126,8 +126,7 @@ Every folder contains:
 | 17 | The Quiz Project | ✅ |
 | 18 | Turtle & the Graphical User Interface (Hirst Spot Painting) | ✅ |
 | 19 | Turtle Racing Game (GUI)| ⏳ |
-| ... | ... | ... |
-| ... | ... | ... |
+| .... | .... | .... |
 
 ---
 
