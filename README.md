@@ -127,7 +127,8 @@ Every folder contains:
 | 18 | Turtle & the Graphical User Interface (Hirst Spot Painting) | ✅ |
 | 19(A) | Turtle Sketcher | ✅ |
 | 19(B) | Turtle Racing Game | ✅ |
-| 20 | Snake Game | ⏳ |
+| 20 | Snake Game (Part 1) | ✅ |
+| 20 | Snake Game (Part 2) | ⏳ |
 | .... | .... | .... |
 
 ---
