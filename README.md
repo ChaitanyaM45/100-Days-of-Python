@@ -130,6 +130,7 @@ Every folder contains:
 | 20 | Snake Game (Part 1) | ✅ |
 | 20 | Snake Game (Part 2) | ⏳ |
 | .... | .... | .... |
+| .... | .... | .... |
 
 ---
 
