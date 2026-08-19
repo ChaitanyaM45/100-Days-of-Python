@@ -128,8 +128,8 @@ Every folder contains:
 | 19(A) | Turtle Sketcher | ✅ |
 | 19(B) | Turtle Racing Game | ✅ |
 | 20 | Snake Game (Part 1) | ✅ |
-| 20 | Snake Game (Part 2) | ⏳ |
-| .... | .... | .... |
+| 21 | Snake Game (Part 2) | ✅ |
+| 22 | The Pong Game | ⏳ |
 | .... | .... | .... |
 
 ---

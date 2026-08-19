@@ -1,48 +1,38 @@
-# 🐍 Day 020 - Snake Game - Part 1
+# 🐍 Day 021 - Snake Game - Part 2
 
 ## 📌 Project Overview
 
-This is **Part 1 of the Day 020** project from the **100 Days of Code: The Complete Python Pro Bootcamp** by Dr. Angela Yu.
+This is **Part 2 of the Day 021** project from the **100 Days of Code: The Complete Python Pro Bootcamp** by Dr. Angela Yu.
 
-In this part, I started building a classic **Snake Game** using Python's `turtle` module.
+In Part 2, I expanded the Snake Game from Day 20 by adding the core gameplay features that make it a complete playable game.
 
-The main focus of Part 1 is creating the snake, controlling its movement, and allowing the player to change its direction using the keyboard.
+The game now includes:
 
-The project also introduces a more structured approach by separating the snake logic into its own Python module.
+* 🍎 Food
+* 🐍 Snake growth
+* 🏆 Score tracking
+* 🧱 Wall collision detection
+* 💥 Self-collision detection
+* 🎮 Game Over functionality
 
----
-
-## 🎮 How It Works
-
-1. A `600 × 600` Turtle screen is created with a black background.
-2. A `Snake` object is created.
-3. The snake starts with **three segments**.
-4. The snake continuously moves forward.
-5. The player can control the snake using the arrow keys.
-6. The snake's body follows the head as it moves.
-7. The program prevents the snake from immediately reversing direction.
+The project continues to use **Object-Oriented Programming (OOP)** and separates different game components into individual Python modules.
 
 ---
 
-## 🐍 Starting Snake
+## 🚀 How It Works
 
-The snake starts with three segments positioned at:
+1. The game starts with a three-segment snake.
+2. The snake continuously moves forward.
+3. The player controls the snake using the arrow keys.
+4. Food appears at a random position on the screen.
+5. When the snake eats the food:
 
-```python
-STARTING_POSITION = [
-    (0, 0),
-    (-20, 0),
-    (-40, 0)
-]
-```
-
-Each segment is represented by a white square Turtle.
-
-The segments are stored inside a list:
-
-```python
-self.segment = []
-```
+   * The food moves to a new random position.
+   * The snake grows by one segment.
+   * The score increases by `1`.
+6. If the snake hits the wall, the game ends.
+7. If the snake collides with its own body, the game ends.
+8. The final screen displays **Game Over**.
 
 ---
 
@@ -55,121 +45,169 @@ self.segment = []
 | ⬅️ Left  | Move Left  |
 | ➡️ Right | Move Right |
 
-The keyboard controls are connected to the Snake object's methods:
+---
+
+## 🍎 Food System
+
+The `Food` class inherits from Python's Turtle class:
 
 ```python
-screen.onkey(snake.up, "Up")
-screen.onkey(snake.down, "Down")
-screen.onkey(snake.left, "Left")
-screen.onkey(snake.right, "Right")
+class Food(Turtle):
 ```
+
+The food is represented as a small white circle and is placed randomly on the screen.
+
+```python
+random_x = random.randint(-280, 280)
+random_y = random.randint(-280, 280)
+self.goto(random_x, random_y)
+```
+
+When the snake gets close enough to the food, the food is refreshed at a new location.
 
 ---
 
-## 🧠 Snake Class
+## 🐍 Snake Growth
 
-The snake is implemented as a custom Python class:
+When the snake eats food, the `extend()` method is called:
 
 ```python
-class Snake:
+if snake.head.distance(food) < 15:
+    food.refresh()
+    snake.extend()
+    scoreboard.increase_score()
 ```
 
-The class is responsible for:
+The new segment is added at the position of the snake's last segment:
+
+```python
+def extend(self):
+    self.add_segment(self.segment[-1].position())
+```
+
+This allows the snake to grow throughout the game.
+
+---
+
+## 🏆 Scoreboard
+
+The `Scoreboard` class is responsible for displaying and updating the player's score.
+
+The initial score is:
+
+```text
+Score : 0
+```
+
+Whenever the snake eats food:
+
+```python
+def increase_score(self):
+    self.score += 1
+```
+
+The scoreboard is then cleared and rewritten with the updated score.
+
+---
+
+## 🧱 Wall Collision
+
+The game checks whether the snake's head has crossed the game boundaries:
+
+```python
+if snake.head.xcor() > 280 or snake.head.xcor() < -280 or \
+   snake.head.ycor() > 280 or snake.head.ycor() < -280:
+    game_is_on = False
+    scoreboard.game_over()
+```
+
+If the snake hits the wall, the game ends.
+
+---
+
+## 💥 Self-Collision
+
+The game also checks whether the snake's head collides with any part of its own body.
+
+```python
+for segment in snake.segment:
+    if segment == snake.head:
+        continue
+
+    if snake.head.distance(segment) < 10:
+        game_is_on = False
+        scoreboard.game_over()
+```
+
+If the head gets too close to another segment, the game ends.
+
+---
+
+## 🏗️ Project Structure
+
+The project is divided into separate modules:
+
+```text
+Day-021-Snake-Game-Part-2/
+│── main.py
+│── snake.py
+│── food.py
+│── scoreboard.py
+└── README.md
+```
+
+### `main.py`
+
+Controls the main game loop and handles:
+
+* Snake movement
+* Food collision
+* Wall collision
+* Self-collision
+* Game state
+
+### `snake.py`
+
+Contains the `Snake` class responsible for:
 
 * Creating the snake
-* Storing its segments
-* Controlling movement
+* Moving the snake
 * Changing direction
-* Preventing direct reverse movement
+* Growing the snake
 
-The head of the snake is stored separately:
+### `food.py`
 
-```python
-self.head = self.segment[0]
-```
+Contains the `Food` class responsible for:
 
----
+* Creating the food
+* Positioning the food randomly
 
-## 🔄 Snake Movement
+### `scoreboard.py`
 
-The snake's body follows the segment in front of it.
+Contains the `Scoreboard` class responsible for:
 
-The segments are moved **backwards from the tail toward the head**:
-
-```python
-for seg_num in range(len(self.segment) - 1, 0, -1):
-    new_x = self.segment[seg_num - 1].xcor()
-    new_y = self.segment[seg_num - 1].ycor()
-    self.segment[seg_num].goto(new_x, new_y)
-```
-
-After the body segments are repositioned, the head moves forward:
-
-```python
-self.head.forward(MOVE_DISTANCE)
-```
-
-The movement distance is set to:
-
-```python
-MOVE_DISTANCE = 20
-```
-
----
-
-## 🧭 Direction Control
-
-The snake uses headings to control its direction:
-
-```python
-UP = 90
-DOWN = 270
-LEFT = 180
-RIGHT = 0
-```
-
-The program also prevents the snake from turning directly into itself.
-
-For example:
-
-```python
-def up(self):
-    if self.head.heading() != DOWN:
-        self.head.setheading(UP)
-```
-
-This prevents the snake from immediately moving from **Down → Up**.
+* Displaying the score
+* Increasing the score
+* Displaying Game Over
 
 ---
 
 ## 💻 Code Concepts Used
 
 * Object-Oriented Programming
+* Inheritance
 * Classes and Objects
-* Class methods
-* Constructors (`__init__`)
-* Instance attributes
-* Python modules
-* Importing custom classes
-* Lists
-* `for` loops
-* `while` loops
-* Keyboard event handling
+* Custom Python Modules
+* Importing classes
 * Turtle Graphics
-* Coordinates
-* Object movement
-* Direction and heading
-
----
-
-## 📂 Project Structure
-
-```text
-Day-020-Snake-Game-Part-1/
-│── main.py
-│── snake.py
-└── README.md
-```
+* Lists
+* Loops
+* Conditional statements
+* Random number generation
+* Collision detection
+* Coordinates and distances
+* Game state management
+* Methods and attributes
 
 ---
 
@@ -183,38 +221,50 @@ Day-020-Snake-Game-Part-1/
 
 ## 🎯 Learning Outcome
 
-By completing Part 1 of the Snake Game, I learned how to:
+By completing Part 2 of the Snake Game, I learned how to:
 
-* Create a custom `Snake` class
-* Organize code into separate Python files
-* Create and manage multiple Turtle objects
-* Store objects inside a list
-* Control multiple objects as a single game component
-* Implement continuous movement
-* Handle keyboard events
-* Work with Turtle headings and coordinates
-* Prevent invalid reverse-direction movement
-* Apply Object-Oriented Programming to a game
+* Build a complete playable game using Python
+* Use inheritance with the Turtle class
+* Organize a project into multiple Python modules
+* Detect collisions using coordinates and distances
+* Dynamically add objects to a list
+* Make the snake grow during gameplay
+* Create and update a scoreboard
+* Detect wall and self-collisions
+* Manage game states
+* Apply OOP concepts to a larger project
 
 ---
 
-## 🚧 Current Progress
-
-This is **Part 1** of the Snake Game.
+## 🚧 Game Progress
 
 ### Completed
 
-* [x] Create the game screen
-* [x] Create the Snake class
-* [x] Create the initial three snake segments
-* [x] Implement snake movement
-* [x] Implement keyboard controls
-* [x] Prevent direct reverse movement
-* [x] Separate snake logic into `snake.py`
+* [x] Create the snake
+* [x] Control the snake using keyboard input
+* [x] Add food
+* [x] Detect food collision
+* [x] Grow the snake
+* [x] Add score tracking
+* [x] Detect wall collision
+* [x] Detect self-collision
+* [x] Add Game Over screen
+* [x] Separate game components into modules
 
-### Coming in Later Parts
+---
 
-The complete Snake Game will be expanded with additional functionality such as food, scoring, collision detection, and game-over logic.
+## 🔮 Future Improvements
+
+Some improvements that can be added include:
+
+* Add a **High Score** system
+* Add a **Play Again** option
+* Prevent food from spawning inside the snake
+* Add increasing difficulty as the score increases
+* Add sound effects
+* Add different themes
+* Add a start screen
+* Save high scores between game sessions
 
 ---
 
