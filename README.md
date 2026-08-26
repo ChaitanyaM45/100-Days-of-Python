@@ -131,8 +131,6 @@ Every folder contains:
 | 21 | Snake Game (Part 2) | ✅ |
 | 22 | The Pong Game | ⏳ |
 | .... | .... | .... |
-| .... | .... | .... |
-
 
 ---
 
