@@ -129,7 +129,8 @@ Every folder contains:
 | 19(B) | Turtle Racing Game | ✅ |
 | 20 | Snake Game (Part 1) | ✅ |
 | 21 | Snake Game (Part 2) | ✅ |
-| 22 | The PONG Game | ⏳ |
+| 22 | The PONG Game | ✅ |
+| 23 | The Turtle Crossing Game | ⏳ |
 | .... | .... | .... |
 
 ---
