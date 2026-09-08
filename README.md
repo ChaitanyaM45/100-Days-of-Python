@@ -130,7 +130,9 @@ Every folder contains:
 | 20 | Snake Game (Part 1) | ✅ |
 | 21 | Snake Game (Part 2) | ✅ |
 | 22 | The PONG Game | ✅ |
-| 23 | The Turtle Crossing Game | ⏳ |
+| 23 | The Turtle Crossing Game | ✅ |
+| 24 | Files, Directories and Paths | ✅ |
+| 25 | Working with CSV Data and the Pandas Library | ⏳ |
 | .... | .... | .... |
 
 ---
