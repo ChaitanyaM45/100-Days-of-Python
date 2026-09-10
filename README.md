@@ -135,6 +135,7 @@ Every folder contains:
 | 25 | Working with CSV Data and the Pandas Library | ✅ |
 | 26 | List Comprehension and the NATO Alphabet | ⏳ |
 | .... | .... | .... |
+| .... | .... | .... |
 
 ---
 
