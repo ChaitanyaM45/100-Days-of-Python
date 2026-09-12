@@ -133,8 +133,8 @@ Every folder contains:
 | 23 | The Turtle Crossing Game | ✅ |
 | 24 | Files, Directories and Paths | ✅ |
 | 25 | Working with CSV Data and the Pandas Library | ✅ |
-| 26 | List Comprehension and the NATO Alphabet | ⏳ |
-| .... | .... | .... |
+| 26 | List Comprehension and the NATO Alphabet | ✅ |
+| 27 | GUI with Tkinter and Functional Arguments | ⏳ |
 | .... | .... | .... |
 
 ---
