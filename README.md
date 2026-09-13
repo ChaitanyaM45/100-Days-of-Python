@@ -135,7 +135,8 @@ Every folder contains:
 | 25 | Working with CSV Data and the Pandas Library | ✅ |
 | 26 | List Comprehension and the NATO Alphabet | ✅ |
 | 27 | GUI with Tkinter and Functional Arguments | ✅ |
-| 28 | Pomodoro App using Tkinter | ⏳ |
+| 28 | Pomodoro App using Tkinter | ✅ |
+| 29 | Building a Password Manager | ⏳ |
 | .... | .... | .... |
 
 ---
