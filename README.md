@@ -134,7 +134,8 @@ Every folder contains:
 | 24 | Files, Directories and Paths | ✅ |
 | 25 | Working with CSV Data and the Pandas Library | ✅ |
 | 26 | List Comprehension and the NATO Alphabet | ✅ |
-| 27 | GUI with Tkinter and Functional Arguments | ⏳ |
+| 27 | GUI with Tkinter and Functional Arguments | ✅ |
+| 28 | Pomodoro App using Tkinter | ⏳ |
 | .... | .... | .... |
 
 ---
