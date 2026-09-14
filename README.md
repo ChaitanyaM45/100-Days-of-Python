@@ -136,7 +136,8 @@ Every folder contains:
 | 26 | List Comprehension and the NATO Alphabet | ✅ |
 | 27 | GUI with Tkinter and Functional Arguments | ✅ |
 | 28 | Pomodoro App using Tkinter | ✅ |
-| 29 | Building a Password Manager | ⏳ |
+| 29 | Building a Password Manager | ✅ |
+| 30 | Errors, Exceptions and Saving JSON Data | ⏳ |
 | .... | .... | .... |
 
 ---
