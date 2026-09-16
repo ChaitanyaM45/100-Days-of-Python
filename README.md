@@ -139,7 +139,8 @@ Every folder contains:
 | 29 | Building a Password Manager | ✅ |
 | 30 | Errors, Exceptions and Saving JSON Data | ✅ |
 | 31 | Capstone Project - Flash Card Program | ✅ |
-| 32 | Email SMTP and The Datetime Module | ⏳ |
+| 32 | Email SMTP and The Datetime Module | ✅ |
+| 33 | Application Programming Language ie.API | ⏳ |
 | .... | .... | .... |
 
 ---
