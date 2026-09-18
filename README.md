@@ -141,7 +141,8 @@ Every folder contains:
 | 31 | Capstone Project - Flash Card Program | ✅ |
 | 32 | Email SMTP and The Datetime Module | ✅ |
 | 33 | Application Programming Language ie.API | ✅ |
-| 34 | The Trivia API and The Quizzler App | ⏳ |
+| 34 | The Trivia API and The Quizzler App | ✅ |
+| 35 | API Keys, Authentication, Environment Variables and Sending SMS | ⏳ |
 | .... | .... | .... |
 
 ---
